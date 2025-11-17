@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjualan Dimsum dan Minuman - ARFA CORNER</title>
+    <!-- Link ke font dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Nama Restoran dengan Logo -->
+    <div class="restaurant-name">
+        <!-- Ganti Nama Restoran dengan Logo -->
+        <img src="images/logo.jpg" alt="Logo ARFA CORNER" class="restaurant-logo">
+        <p class="tagline">Nikmati Dimsum Lezat dan Minuman Segar</p>
+    </div>
+
+    <!-- Input Nama Pembeli -->
+    <div class="buyer-info">
+        <label for="buyerName">Nama Pembeli:</label>
+        <input type="text" id="buyerName" placeholder="Masukkan nama Anda" required>
+    </div>
+
+    <!-- Makanan -->
+    <div class="category">
+        <h2>Makanan</h2>
+
+        <!-- Dimsum Mentai S -->
+        <div class="product" id="dimsumMentaiS">
+            <div>
+                <img src="images/dimsumMentaiS.jpg" alt="Dimsum Mentai S" class="product-image">
+                <h3>Dimsum Mentai S (2 pcs)</h3>
+                <p>Harga: Rp 10.000</p>
+            </div>
+            <div class="quantity-controls">
+                <button onclick="updateQuantity('dimsumMentaiS', 'decrease')">-</button>
+                <span id="dimsumMentaiSQty">0</span>
+                <button onclick="updateQuantity('dimsumMentaiS', 'increase')">+</button>
+            </div>
+        </div>
+
+        <!-- Dimsum Mentai L -->
+        <div class="product" id="dimsumMentaiL">
+            <div>
+                <img src="images/dimsumMentaiL.jpg" alt="Dimsum Mentai L" class="product-image">
+                <h3>Dimsum Mentai L (4 pcs)</h3>
+                <p>Harga: Rp 20.000</p>
+            </div>
+            <div class="quantity-controls">
+                <button onclick="updateQuantity('dimsumMentaiL', 'decrease')">-</button>
+                <span id="dimsumMentaiLQty">0</span>
+                <button onclick="updateQuantity('dimsumMentaiL', 'increase')">+</button>
+            </div>
+        </div>
+
+        <!-- Dimsum Mentai XL -->
+        <div class="product" id="dimsumMentaiXL">
+            <div>
+                <img src="images/dimsumMentaiXL.jpg" alt="Dimsum Mentai XL" class="product-image">
+                <h3>Dimsum Mentai XL (6 pcs)</h3>
+                <p>Harga: Rp 28.000</p>
+            </div>
+            <div class="quantity-controls">
+                <button onclick="updateQuantity('dimsumMentaiXL', 'decrease')">-</button>
+                <span id="dimsumMentaiXLQty">0</span>
+                <button onclick="updateQuantity('dimsumMentaiXL', 'increase')">+</button>
+            </div>
+        </div>
+
+        <!-- Dimsum Original S -->
+        <div class="product" id="dimsumOriginalS">
+            <div>
+                <img src="images/dimsumOriginalS.jpg" alt="Dimsum Original S" class="product-image">
+                <h3>Dimsum Original S (2 pcs)</h3>
+                <p>Harga: Rp 8.000</p>
+            </div>
+            <div class="quantity-controls">
+                <button onclick="updateQuantity('dimsumOriginalS', 'decrease')">-</button>
+                <span id="dimsumOriginalSQty">0</span>
+                <button onclick="updateQuantity('dimsumOriginalS', 'increase')">+</button>
+            </div>
+        </div>
+
+        <!-- Dimsum Original L -->
+        <div class="product" id="dimsumOriginalL">
+            <div>
+                <img src="images/dimsumOriginalL.jpg" alt="Dimsum Original L" class="product-image">
+                <h3>Dimsum Original L (4 pcs)</h3>
+                <p>Harga: Rp 15.000</p>
+            </div>
+            <div class="quantity-controls">
+                <button onclick="updateQuantity('dimsumOriginalL', 'decrease')">-</button>
+                <span id="dimsumOriginalLQty">0</span>
+                <button onclick="updateQuantity('dimsumOriginalL', 'increase')">+</button>
+            </div>
+        </div>
+
+        <!-- Dimsum Original XL -->
+        <div class="product" id="dimsumOriginalXL">
+            <div>
+                <img src="images/dimsumOriginalXL.jpg" alt="Dimsum Original XL" class="product-image">
+                <h3>Dimsum Original XL (6 pcs)</h3>
+                <p>Harga: Rp 22.000</p>
+            </div>
+            <div class="quantity-controls">
+                <button onclick="updateQuantity('dimsumOriginalXL', 'decrease')">-</button>
+                <span id="dimsumOriginalXLQty">0</span>
+                <button onclick="updateQuantity('dimsumOriginalXL', 'increase')">+</button>
+            </div>
+        </div>
+    </div>
+
+    <hr> <!-- Pemisah antara Makanan dan Minuman -->
+
+    <!-- Minuman -->
+    <div class="category">
+        <h2>Minuman</h2>
+
+        <!-- Matcha -->
+        <div class="product" id="matcha">
+            <div>
+                <img src="images/matcha.jpg" alt="Matcha" class="product-image">
+                <h3>Matcha</h3>
+                <p>Harga: Rp 10.000</p> <!-- Harga Matcha 1 pcs = 10000 -->
+            </div>
+            <div class="quantity-controls">
+                <button onclick="updateQuantity('matcha', 'decrease')">-</button>
+                <span id="matchaQty">0</span>
+                <button onclick="updateQuantity('matcha', 'increase')">+</button>
+            </div>
+        </div>
+
+        <!-- Kopi Susu -->
+        <div class="product" id="kopiSusu">
+            <div>
+                <img src="images/kopiSusu.jpg" alt="Kopi Susu" class="product-image">
+                <h3>Kopi Susu</h3>
+                <p>Harga: Rp 9.000</p> <!-- Harga Kopi Susu 1 pcs = 9000 -->
+            </div>
+            <div class="quantity-controls">
+                <button onclick="updateQuantity('kopiSusu', 'decrease')">-</button>
+                <span id="kopiSusuQty">0</span>
+                <button onclick="updateQuantity('kopiSusu', 'increase')">+</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Total Harga -->
+    <div class="total">
+        Total Harga: Rp <span id="totalPrice">0</span>
+    </div>
+
+    <!-- Checkout Button -->
+    <a href="#" id="whatsappLink">
+        <button class="checkout-btn">Checkout</button>
+    </a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
